@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "d2d7f26b-ecc6-4014-b12e-699544d7e296",
+		"name": "stg.tix.id/v1/",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "Request Token with Valid Client-Secret",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2b9a9d54-17fd-475b-92ca-f97659872951",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", data.results.token);",
+									"",
+									"pm.test(\"token\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var tok = pm.environment.get(\"token\");",
+									"    pm.expect(tok).to.eql(jsonData.results.token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Client-Secret",
+								"value": "123456",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/token",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "48006f4a-264d-48b0-a15d-4164323e29d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "285ab8f0-1537-496e-b23e-d7891981a6ee",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"postman.setEnvironmentVariable(\"refresh_token\",postman.getResponseHeader(\"X-Tix-Authorization\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"msisdn\": \"+6281909000002\",\r\n  \"password\": \"ae130b7f726d63b7ed708cdf0b1af776\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/login/phone",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"login",
+								"phone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All City",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "980f0056-bfdd-4abf-b7f5-055827ac1863",
+								"exec": [
+									"",
+									"var data = JSON.parse(responseBody);",
+									"console.log(data);",
+									"console.log(data.results.length);",
+									"",
+									"for(let i = 0; i < data.results.length; i++) {",
+									"        var d = data.results[i];",
+									"        console.log(d.name);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{refresh_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/cities",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
