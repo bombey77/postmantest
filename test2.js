@@ -1,20 +1,20 @@
 var fs = require('fs');
 
 fs.open('mynewfile.csv', 'w', function (err, file) {
-  if (err) throw err;
-  console.log('Saved!');
+    if (err) throw err;
+    console.log('Saved!');
 });
 
-var content2 = fs.readFileSync("environment4.json");
-var json2 = JSON.parse(content2);
-var array = json2.values[9].value;
-var array2 = array.split(",");
+var environment = fs.readFileSync("environment4.json");
+var parsedEnvironment = JSON.parse(environment);
+var envValue = parsedEnvironment.values[9].value;
+var subEnvValue = envValue.substring(1, envValue.length-1);
+var splitEnvValue = subEnvValue.split(",");
 
-array2.forEach(function(element) {
-fs.appendFile('mynewfile.csv', element + '\n', function (err) {
-  if (err) throw err;
-    console.log('Add ' + element +".");
-});
+splitEnvValue.forEach(function(element) {
+    fs.appendFileSync('mynewfile.csv', element + '\n', function (err) {
+        if (err) throw err;
+    });
 });
 
 
