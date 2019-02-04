@@ -9,5 +9,13 @@ pipeline {
 			
 			}
 		}
+		
+		stage ('Writing cities') {
+
+			steps {
+				sh 'node test2.js'
+			
+			}
+		}
     }
 }
