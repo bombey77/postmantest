@@ -5,10 +5,9 @@ pipeline {
 		stage ('Compile Tests') {
 
 			steps {
-				withMaven(maven : 'maven 3.6.0') {
-					sh 'chmod +x -R ${WORKSPACE}/drivers/chromedriver'
-					sh 'mvn clean test'
-				}
+				sh 'newman run collection4.json -e environment4.json'
+			
 			}
 		}
+    }
 }
