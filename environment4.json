@@ -1,0 +1,71 @@
+{
+	"id": "43a8c7e4-9168-478e-a593-71d41584a0ac",
+	"name": "Environment",
+	"values": [
+		{
+			"key": "BASE_URL",
+			"value": "https://stg.tix.id",
+			"description": {
+				"content": "",
+				"type": "text/plain"
+			},
+			"enabled": true
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2lzZG4iOiIiLCJ1c2VyX2lkIjoiIiwicHVycG9zZSI6Im5vdGxvZ2luIiwiYXVkIjoiVGl4SUQgTWlkZGxld2FyZSIsImV4cCI6MTU1NzkwNjI1NywiaWF0IjoxNTQ5MjY2MjU3LCJpc3MiOiJUaXhJRCBTZWN1cml0eSBBdXRob3JpdHkiLCJzdWIiOiJNb2JpbGUgYXV0aG9yaXphdGlvbiB0b2tlbiJ9.-kwVfQqupbr4bLTcMRjNX85K_Esj7Nula3xM9kdL6kQ",
+			"description": {
+				"content": "",
+				"type": "text/plain"
+			},
+			"enabled": true
+		},
+		{
+			"key": "static_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2lzZG4iOiIiLCJwdXJwb3NlIjoibm90bG9naW4iLCJhdWQiOiJUaXhJRCBNaWRkbGV3YXJlIiwiZXhwIjoxNTI4OTczOTk0LCJpYXQiOjE1MjAzMzM5OTQsImlzcyI6IlRpeElEIFNlY3VyaXR5IEF1dGhvcml0eSIsInN1YiI6Ik1vYmlsZSBhdXRob3JpemF0aW9uIHRva2VuIn0.w3BJ2S4XehK7Ua-Wd-zo6YqJU3Zue0-Q4FDGEcvoM_s",
+			"description": {
+				"content": "",
+				"type": "text/plain"
+			},
+			"enabled": true
+		},
+		{
+			"key": "refresh_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2lzZG4iOiIrNjI4Mzg3OTM1OTAxMyIsInVzZXJfaWQiOiIiLCJwdXJwb3NlIjoibG9naW4iLCJhdWQiOiJUaXhJRCBNaWRkbGV3YXJlIiwiZXhwIjoxNTU3OTA2MjYzLCJpYXQiOjE1NDkyNjYyNjMsImlzcyI6IlRpeElEIFNlY3VyaXR5IEF1dGhvcml0eSIsInN1YiI6Ik1vYmlsZSBhdXRob3JpemF0aW9uIHRva2VuIn0.0g7lUi0BTp9FauJeyQ7XMqblf4TMIzDTIXv4mRqMA5Q",
+			"enabled": true
+		},
+		{
+			"key": "msisdn",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "valData",
+			"value": 10,
+			"enabled": true
+		},
+		{
+			"key": "one",
+			"value": "First Town",
+			"enabled": true
+		},
+		{
+			"key": "sometext",
+			"value": 1,
+			"enabled": true
+		},
+		{
+			"key": "all_cities",
+			"value": "[\"AMBON\",\"BALIKPAPAN\",\"BANDUNG\",\"BANJARMASIN\",\"BATAM\",\"BEKASI\",\"BENGKULU\",\"BOGOR\",\"CILEGON\",\"CIREBON\",\"DENPASAR\",\"GARUT\",\"GORONTALO\",\"GRESIK\",\"JAKARTA\",\"JAMBI\",\"JAYAPURA\",\"KARAWANG\",\"KISARAN\",\"KUPANG\",\"LAMPUNG\",\"MAKASSAR\",\"MALANG\",\"MANADO\",\"MATARAM\",\"MEDAN\",\"PADANG\",\"PALANGKARAYA\",\"PALEMBANG\",\"PEKALONGAN\",\"PEKANBARU\",\"PONTIANAK\",\"SAMARINDA\",\"SEMARANG\",\"SIDOARJO\",\"SINGKAWANG\",\"SOLO\",\"SUMEDANG\",\"SURABAYA\",\"SURAKARTA\",\"TANGERANG\",\"TANJUNG PINANG\",\"TASIKMALAYA\",\"TERNATE\",\"YOGYAKARTA\"]",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-02-04T10:12:50.044Z",
+	"_postman_exported_using": "Postman/6.7.3"
+}
