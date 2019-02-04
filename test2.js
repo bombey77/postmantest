@@ -13,7 +13,7 @@ var array2 = array.split(",");
 array2.forEach(function(element) {
 fs.appendFile('mynewfile.csv', element + '\n', function (err) {
   if (err) throw err;
-  console.log('Updated!');
+    console.log('Add ' + element +".");
 });
 });
 
